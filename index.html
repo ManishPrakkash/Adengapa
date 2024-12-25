@@ -1,12 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITLE</title>
+    <title>Document</title>
     <link href="/Adengapa/style.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
 </head>
+
 <body>
-    <h1 class="title">Title</h1>
+    <script src="/index.js"></script>
+    <header>
+        <div class="container">
+            <h1>SECE</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#booking">Booking</a></li>
+                    <li><a href="#buses">Available Buses</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div id="home" class="banner">
+            <img src="/api/placeholder/1920/500" alt="Luxury Bus">
+            <div class="banner-text">
+                <h2>Book Your Bus Tickets Easily</h2>
+                <p>Experience comfortable and safe journeys with SECE</p>
+            </div>
+        </div>
+        <div class="container">
+            <form id="booking-form">
+                <div class="form-group">
+                    <label for="origin">From</label>
+                    <input type="text" id="origin" name="origin" required placeholder="Enter origin city">
+                </div>
+                <div class="form-group">
+                    <label for="destination">To</label>
+                    <input type="text" id="destination" name="destination" required placeholder="Enter destination city">
+                </div>
+                <div class="form-group">
+                    <label for="date">Date of Journey</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="passengers">Passengers</label>
+                    <input type="number" id="passengers" name="passengers" required min="1" max="6" value="1">
+                </div>
+                <button type="submit">Search Buses</button>
+            </form>
+        </div>
+
+        <section id="buses" class="container">
+            <h2>Available Buses</h2>
+            <div class="bus-list">
+                
+            </div>
+        </section>
+
+        <section id="seats" class="container" style="display: none;">
+            <h2>Available Seats</h2>
+            <div class="seat-selection">
+                <div class="seats"></div>
+                <button class="book-seats" style="display: block; margin: 2rem auto;">Confirm Booking</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 SECE. All rights reserved.</p>
+    </footer>
 </body>
 </html>
