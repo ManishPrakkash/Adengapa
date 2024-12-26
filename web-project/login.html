@@ -94,13 +94,19 @@ body {
     text-decoration: underline;
 }
 </style>
+<script>
+function handleLogin(event) {
+    event.preventDefault();
+    window.location.href = 'index.html';
+}
+</script>
 </head>
 <body>
     <div class="login-container">
         <div class="login-header">
             <h1>Login</h1>
         </div>
-        <form id="login-form">
+        <form onsubmit="handleLogin(event)">
             <div class="input-group">
                 <label for="userid">User ID</label>
                 <input type="text" id="userid" name="userid" placeholder="Enter your user ID" required>
@@ -115,14 +121,5 @@ body {
             </div>
         </form>
     </div>
-
-    <script>
-        document.getElementById('login-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            // Perform login validation here (e.g., check user ID and password)
-            // For simplicity, we'll assume the login is always successful
-            window.location.href = 'index.html';
-        });
-    </script>
 </body>
 </html>
