@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const buses = [
         { id: 1, name: 'Udumalai', type: '24', origin: 'Coimbatore', destination: 'Udumalai', departure: '4:45 PM', arrival: '6:15 PM', duration: '3h', price: 500, seats: 40, available: 25 },
         { id: 2, name: 'Pollachi', type: '32', origin: 'Coimbatore', destination: 'Pollachi', departure: '4:30 PM', arrival: '6:15 PM', duration: '3h', price: 600, seats: 40, available: 15 },
-        { id: 3, name: 'Express', type: '24', origin: 'Pollachi', destination: 'Udumalai', departure: '5:30 PM', arrival: '7:15 PM', duration: '2h', price: 450, seats: 40, available: 20 },
+        { id: 3, name: 'Coimbatore', type: '24', origin: 'Coimbatore', destination: 'Coimbatore', departure: '5:30 PM', arrival: '7:15 PM', duration: '2h', price: 450, seats: 40, available: 20 },
         { id: 4, name: 'Chennai Express', type: '24', origin: 'Coimbatore', destination: 'Chennai', departure: '6:00 AM', arrival: '2:00 PM', duration: '8h', price: 800, seats: 40, available: 30 },
         { id: 5, name: 'Madurai Express', type: '32', origin: 'Coimbatore', destination: 'Madurai', departure: '7:00 AM', arrival: '1:00 PM', duration: '6h', price: 700, seats: 40, available: 20 },
         { id: 6, name: 'Trichy Express', type: '24', origin: 'Coimbatore', destination: 'Trichy', departure: '8:00 AM', arrival: '2:00 PM', duration: '6h', price: 750, seats: 40, available: 25 },
