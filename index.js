@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Sample bus data with routes
     const buses = [
         { id: 1, name: 'Udumalai', type: '24', origin: 'SECE', destination: 'Udumalai', departure: '4:45 PM', arrival: '6:15 PM', duration: '2h', price: 300, seats: 40, available: 25 },
-        { id: 2, name: 'Pollachi', type: '32', origin: 'SECE', destination: 'Pollachi', departure: '4:30 PM', arrival: '6:15 PM', duration: '3h', price: 600, seats: 40, available: 15 },
+        { id: 2, name: 'Pollachi', type: '24', origin: 'SECE', destination: 'Pollachi', departure: '4:30 PM', arrival: '5:30 PM', duration: '1h', price: 200, seats: 40, available: 15 },
         { id: 3, name: 'Coimbatore', type: '24', origin: 'SECE', destination: 'Coimbatore', departure: '4:30 PM', arrival: '7:15 PM', duration: '2h', price: 450, seats: 40, available: 20 },
         { id: 4, name: 'palladam', type: '25', origin: 'SECE', destination: 'palladam', departure: '4 :45 PM', arrival: '6:00 PM', duration: '1:30h', price: 800, seats: 40, available: 30 },
         { id: 5, name: 'Tirupur', type: '32', origin: 'SECE', destination: 'Madurai', departure: '7:00 AM', arrival: '1:00 PM', duration: '6h', price: 700, seats: 40, available: 20 },
