@@ -11,7 +11,7 @@ body {
 }
 
 header {
-    background-color: #2864fc;
+    background-color: #1755a7;
     color: white;
     padding: 1rem 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -48,7 +48,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #FFE0E0;
+    color: #fac203;
 }
 
 .banner {
@@ -104,8 +104,34 @@ main .container {
     margin-top: -50px;
     position: relative;
     z-index: 1;
+    margin-top: 30px;
+}
+ 
+#title-text{
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display:block;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: -50px;
+    position: relative;
+    z-index: 1;
+    margin-top: 40px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
+.title-head{
+    text-align: center;
+    color: #1755a7;
+}
+.title-para{
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
 #booking-form label {
     display: block;
     margin-bottom: 0.5rem;
@@ -128,7 +154,7 @@ main .container {
     font-size: 1rem;
 }
 #booking-form button {
-    background-color: #2864fc;
+    background-color: #1755a7;
     color: white;
     border: none;
     padding: 1rem;
@@ -139,7 +165,7 @@ main .container {
 }
 
 #booking-form button:hover {
-    background-color: #B71C1C;
+    background-color: #103d77;
 }
 
 .bus-list {
@@ -172,7 +198,7 @@ main .container {
 }
 
 .bus-item button {
-    background-color: #2864fc;
+    background-color: #1755a7;
     color: white;
     border: none;
     padding: 0.8rem 1.5rem;
@@ -182,7 +208,7 @@ main .container {
 }
 
 .bus-item button:hover {
-    background-color: #B71C1C;
+    background-color:#103d77;
 }
 
 .seats {
@@ -211,13 +237,13 @@ main .container {
 }
 
 .seat:hover {
-    border-color: #2864fc;
+    border-color: #103d77;
 }
 
 .seat.selected {
-    background-color: #2864fc;
+    background-color: #1755a7;
     color: white;
-    border-color: #2864fc;
+    border-color: #1755a7;
 }
 
 .seat.unavailable {
@@ -227,7 +253,7 @@ main .container {
 
 /* Add styles for the book-seats button */
 .book-seats {
-    background-color: #2864fc;
+    background-color: #1755a7;
     color: white;
     border: none;
     padding: 1rem;
@@ -238,7 +264,7 @@ main .container {
 }
 
 .book-seats:hover {
-    background-color: #B71C1C;
+    background-color: #103d77;
 }
 
 footer {
