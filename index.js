@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 3, name: 'Coimbatore', type: '24', origin: 'SECE', destination: 'Coimbatore', departure: '4:30 PM', arrival: '7:15 PM', duration: '2h', price: 450, seats: 40, available: 20 },
         { id: 4, name: 'palladam', type: '25', origin: 'SECE', destination: 'palladam', departure: '4 :45 PM', arrival: '6:00 PM', duration: '1:30h', price: 800, seats: 40, available: 30 },
         { id: 5, name: 'Tirupur', type: '33', origin: 'SECE', destination: 'Tirupur', departure: '4:45 PM', arrival: '6:00 PM', duration: '1:15h', price: 200, seats: 40, available: 20 },
-        { id: 6, name: 'Sundarapuram', type: '22', origin: 'SECE', destination: 'Sundarapuram', departure: '4:30 PM', arrival: '5:30 PM', duration: '1h', price: 100, seats: 40, available: 25 },
+        { id: 6, name: 'Sundarapuram', type: '34', origin: 'SECE', destination: 'Sundarapuram', departure: '4:30 PM', arrival: '5:30 PM', duration: '1h', price: 100, seats: 40, available: 25 },
         { id: 7, name: 'Pothanur', type: '32', origin: 'SECE', destination: 'Salem', departure: '9:00 AM', arrival: '1:00 PM', duration: '4h', price: 600, seats: 40, available: 30 },
         { id: 8, name: 'Anamalai', type: '24', origin: 'SECE', destination: 'Erode', departure: '10:00 AM', arrival: '12:00 PM', duration: '2h', price: 500, seats: 40, available: 35 },
         { id: 9, name: 'Echanari', type: '32', origin: 'SECE', destination: 'Tirunelveli', departure: '11:00 AM', arrival: '7:00 PM', duration: '8h', price: 900, seats: 40, available: 20 },
