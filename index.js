@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 5, name: 'Tirupur', type: '33', origin: 'SECE', destination: 'Tirupur', departure: '4:45 PM', arrival: '6:00 PM', duration: '1:15h', price: 300, seats: 40, available: 20 },
         { id: 6, name: 'Sundarapuram', type: '34', origin: 'SECE', destination: 'Sundarapuram', departure: '4:30 PM', arrival: '5:30 PM', duration: '1h', price: 100, seats: 40, available: 25 },
         { id: 7, name: 'Pothanur', type: '35', origin: 'SECE', destination: 'Pothanur', departure: '4:30 PM', arrival: '5:30 PM', duration: '1h', price: 300, seats: 40, available: 30 },
-        { id: 8, name: 'Anaimalai', type: '27', origin: 'SECE', destination: 'Anaimalai', departure: '4:45 PM', arrival: '6:15 PM', duration: '1:00h', price: 200, seats: 40, available: 35 },
+        { id: 8, name: 'Anaimalai', type: '27', origin: 'SECE', destination: 'Anaimalai', departure: '4:45 PM', arrival: '6:15 PM', duration: '1h', price: 200, seats: 40, available: 35 },
         { id: 9, name: 'Echanari', type: '32', origin: 'SECE', destination: 'Echanari', departure: '11:00 AM', arrival: '7:00 PM', duration: '8h', price: 900, seats: 40, available: 20 },
         { id: 10, name: 'Negamam', type: '24', origin: 'SECE', destination: 'Negamam', departure: '4:30 PM', arrival: '5:30 PM', duration: '1h', price: 200, seats: 40, available: 15 }
     ];
