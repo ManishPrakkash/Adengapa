@@ -105,7 +105,7 @@ main .container {
     position: relative;
     z-index: 1;
     margin-top: 30px;
-    margin-left: ;
+    margin-top:30px;
 }
  
 #title-text{
@@ -310,4 +310,126 @@ footer {
 
 .bus-detail-block p {
     color: #666;
+}
+
+#contact {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+}
+
+#contact h2 {
+    text-align: center;
+    color: #1755a7;
+    margin-bottom: 1rem;
+}
+
+#contact ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#contact ul li {
+    margin-bottom: 0.5rem;
+    color: #333;
+    text-align: center;
+}
+.footer {
+    background: linear-gradient(to right, #003366, #004080);
+    color: white;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-top {
+    background-color: #1E4D8C;
+    padding: 20px 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.contact-info {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.info-item .icon {
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-item .icon img {
+    width: 24px;
+    height: 24px;
+}
+
+.info-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-label {
+    font-size: 14px;
+    opacity: 0.9;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.info-value {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+.social-icons img {
+    width: 20px;
+    height: 20px;
+}
+
+.copyright {
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    background-color: #002855;
+    margin-top: 20px;
 }

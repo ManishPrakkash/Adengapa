@@ -5,18 +5,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const today = new Date().toISOString().split('T')[0];
     document.getElementById('date').min = today;
 
-    // Sample bus data with routes
+    // Sample bus data with routes and images
     const buses = [
-        { id: 1, name: 'Udumalai', type: '24', origin: 'SECE', destination: 'Udumalai', departure: '4:45 PM', arrival: '6:15 PM', duration: '2h', price: 300, seats: 40, available: 25 },
-        { id: 2, name: 'Pollachi', type: '32', origin: 'SECE', destination: 'Pollachi', departure: '4:30 PM', arrival: '5:30 PM', duration: '1h', price: 200, seats: 40, available: 15 },
-        { id: 3, name: 'Coimbatore', type: '24', origin: 'SECE', destination: 'Coimbatore', departure: '4:30 PM', arrival: '6:30 PM', duration: '2h', price: 450, seats: 40, available: 20 },
-        { id: 4, name: 'Palladam', type: '25', origin: 'SECE', destination: 'Palladam', departure: '4:45 PM', arrival: '6:00 PM', duration: '1:30h', price: 200, seats: 40, available: 30 },
-        { id: 5, name: 'Tirupur', type: '33', origin: 'SECE', destination: 'Tirupur', departure: '4:45 PM', arrival: '6:00 PM', duration: '1:15h', price: 300, seats: 40, available: 20 },
-        { id: 6, name: 'Sundarapuram', type: '34', origin: 'SECE', destination: 'Sundarapuram', departure: '4:30 PM', arrival: '5:30 PM', duration: '1h', price: 100, seats: 40, available: 25 },
-        { id: 7, name: 'Pothanur', type: '35', origin: 'SECE', destination: 'Pothanur', departure: '4:30 PM', arrival: '5:30 PM', duration: '1h', price: 300, seats: 40, available: 30 },
-        { id: 8, name: 'Anaimalai', type: '27', origin: 'SECE', destination: 'Anaimalai', departure: '4:45 PM', arrival: '6:15 PM', duration: '1h', price: 200, seats: 40, available: 35 },
-        { id: 9, name: 'Echanari', type: '32', origin: 'SECE', destination: 'Echanari', departure: '4:30 PM', arrival: '6:00 PM', duration: '1.30h', price: 200, seats: 40, available: 20 },
-        { id: 10, name: 'Negamam', type: '24', origin: 'SECE', destination: 'Negamam', departure: '4:30 PM', arrival: '5:30 PM', duration: '1h', price: 200, seats: 40, available: 15 }
+        { id: 1, name: 'Udumalai', type: '24', origin: 'SECE', destination: 'Udumalai', departure: '4:45 PM', arrival: '6:15 PM', duration: '2h', price: 300, seats: 40, available: 25, image: '' },
+        { id: 2, name: 'Pollachi', type: '32', origin: 'SECE', destination: 'Pollachi', departure: '4:30 PM', arrival: '5:30 PM', duration: '1h', price: 200, seats: 40, available: 15, image: 'assets/ClgBus.jpeg' },
+        { id: 3, name: 'Coimbatore', type: '24', origin: 'SECE', destination: 'Coimbatore', departure: '4:30 PM', arrival: '6:30 PM', duration: '2h', price: 450, seats: 40, available: 20, image: 'assets/ClgBus.jpeg' },
+        { id: 4, name: 'Palladam', type: '25', origin: 'SECE', destination: 'Palladam', departure: '4:45 PM', arrival: '6:00 PM', duration: '1:30h', price: 200, seats: 40, available: 30, image: 'assets/ClgBus.jpeg' },
+        { id: 5, name: 'Tirupur', type: '33', origin: 'SECE', destination: 'Tirupur', departure: '4:45 PM', arrival: '6:00 PM', duration: '1:15h', price: 300, seats: 40, available: 20, image: 'assets/ClgBus.jpeg' },
+        { id: 6, name: 'Sundarapuram', type: '34', origin: 'SECE', destination: 'Sundarapuram', departure: '4:30 PM', arrival: '5:30 PM', duration: '1h', price: 100, seats: 40, available: 25, image: 'assets/ClgBus.jpeg' },
+        { id: 7, name: 'Pothanur', type: '35', origin: 'SECE', destination: 'Pothanur', departure: '4:30 PM', arrival: '5:30 PM', duration: '1h', price: 300, seats: 40, available: 30, image: 'assets/ClgBus.jpeg' },
+        { id: 8, name: 'Anaimalai', type: '27', origin: 'SECE', destination: 'Anaimalai', departure: '4:45 PM', arrival: '6:15 PM', duration: '1h', price: 200, seats: 40, available: 35, image: 'assets/ClgBus.jpeg' },
+        { id: 9, name: 'Echanari', type: '32', origin: 'SECE', destination: 'Echanari', departure: '4:30 PM', arrival: '6:00 PM', duration: '1.30h', price: 200, seats: 40, available: 20, image: 'assets/ClgBus.jpeg' },
+        { id: 10, name: 'Negamam', type: '24', origin: 'SECE', destination: 'Negamam', departure: '4:30 PM', arrival: '5:30 PM', duration: '1h', price: 200, seats: 40, available: 15, image: 'assets/ClgBus.jpeg' }
     ];
 
     if (bookingForm) {
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const busItem = document.createElement('div');
                 busItem.classList.add('bus-item');
                 busItem.innerHTML = `
-                    <img src="assets/bus.png" alt="${bus.name}">
+                    <img src="${bus.image}" alt="${bus.name}">
                     <div class="bus-info">
                         <h3>${bus.name} (${bus.type} Seater)</h3>
                         <p>${bus.origin} to ${bus.destination}</p>
