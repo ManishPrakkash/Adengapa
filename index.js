@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const bookingForm = document.getElementById('booking-form');
     const busList = document.querySelector('.bus-list');
+    const busesSection = document.getElementById('buses');
     const seatsSection = document.getElementById('seats');
     const today = new Date().toISOString().split('T')[0];
     document.getElementById('date').min = today;
@@ -10,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 1, name: 'Udumalai', type: '24', origin: 'SECE', destination: 'Udumalai', departure: '4:45 PM', arrival: '6:15 PM', duration: '2h', price: 300, seats: 40, available: 25 },
         { id: 2, name: 'Pollachi', type: '32', origin: 'SECE', destination: 'Pollachi', departure: '4:30 PM', arrival: '5:30 PM', duration: '1h', price: 200, seats: 40, available: 15 },
         { id: 3, name: 'Coimbatore', type: '24', origin: 'SECE', destination: 'Coimbatore', departure: '4:30 PM', arrival: '6:30 PM', duration: '2h', price: 450, seats: 40, available: 20 },
-        { id: 4, name: 'palladam', type: '25', origin: 'SECE', destination: 'palladam', departure: '4 :45 PM', arrival: '6:00 PM', duration: '1:30h', price: 200, seats: 40, available: 30 },
+        { id: 4, name: 'Palladam', type: '25', origin: 'SECE', destination: 'Palladam', departure: '4:45 PM', arrival: '6:00 PM', duration: '1:30h', price: 200, seats: 40, available: 30 },
         { id: 5, name: 'Tirupur', type: '33', origin: 'SECE', destination: 'Tirupur', departure: '4:45 PM', arrival: '6:00 PM', duration: '1:15h', price: 300, seats: 40, available: 20 },
         { id: 6, name: 'Sundarapuram', type: '34', origin: 'SECE', destination: 'Sundarapuram', departure: '4:30 PM', arrival: '5:30 PM', duration: '1h', price: 100, seats: 40, available: 25 },
         { id: 7, name: 'Pothanur', type: '35', origin: 'SECE', destination: 'Pothanur', departure: '4:30 PM', arrival: '5:30 PM', duration: '1h', price: 300, seats: 40, available: 30 },
@@ -32,14 +33,16 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (filteredBuses.length === 0) {
                 busList.innerHTML = '<div class="no-buses">No buses available for this route.</div>';
+                busesSection.style.display = 'block';
                 return;
             }
             
+            busesSection.style.display = 'block';
             filteredBuses.forEach(bus => {
                 const busItem = document.createElement('div');
                 busItem.classList.add('bus-item');
                 busItem.innerHTML = `
-                    <img src="/api/placeholder/80/80" alt="${bus.name}">
+                    <img src="assets/bus.png" alt="${bus.name}">
                     <div class="bus-info">
                         <h3>${bus.name} (${bus.type} Seater)</h3>
                         <p>${bus.origin} to ${bus.destination}</p>
@@ -98,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const passengerCount = parseInt(document.getElementById('passengers').value);
         
         if (selectedSeats > passengerCount) {
-            alert(You can only select ${passengerCount} seat(s) as per your passenger count.);
+            alert(`You can only select ${passengerCount} seat(s) as per your passenger count.`);
             // Deselect the last selected seat
             const lastSelected = document.querySelector('.seat.selected:last-child');
             if (lastSelected) {
@@ -115,10 +118,11 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         const seatNumbers = Array.from(selectedSeats).map(seat => seat.innerText).join(', ');
-        alert(Booking confirmed for seats: ${seatNumbers});
+        alert(`Booking confirmed for seats: ${seatNumbers}`);
         location.href = '#home';
         bookingForm.reset();
         busList.innerHTML = '';
         seatsSection.style.display = 'none';
+        busesSection.style.display = 'none';
     });
 });
