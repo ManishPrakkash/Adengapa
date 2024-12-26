@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Sample bus data with routes and images
     const buses = [
-        { id: 1, name: 'Udumalai', type: '24', origin: 'SECE', destination: 'Udumalai', departure: '4:45 PM', arrival: '6:15 PM', duration: '2h', price: 300, seats: 40, available: 25, image: 'assets/ClgBus.jpeg' },
+        { id: 1, name: 'Udumalai', type: '24', origin: 'SECE', destination: 'Udumalai', departure: '4:45 PM', arrival: '6:15 PM', duration: '2h', price: 300, seats: 40, available: 25, image: '' },
         { id: 2, name: 'Pollachi', type: '32', origin: 'SECE', destination: 'Pollachi', departure: '4:30 PM', arrival: '5:30 PM', duration: '1h', price: 200, seats: 40, available: 15, image: 'assets/ClgBus.jpeg' },
         { id: 3, name: 'Coimbatore', type: '24', origin: 'SECE', destination: 'Coimbatore', departure: '4:30 PM', arrival: '6:30 PM', duration: '2h', price: 450, seats: 40, available: 20, image: 'assets/ClgBus.jpeg' },
         { id: 4, name: 'Palladam', type: '25', origin: 'SECE', destination: 'Palladam', departure: '4:45 PM', arrival: '6:00 PM', duration: '1:30h', price: 200, seats: 40, available: 30, image: 'assets/ClgBus.jpeg' },
