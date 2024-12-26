@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 7, name: 'Pothanur', type: '35', origin: 'SECE', destination: 'Pothanur', departure: '4:30 PM', arrival: '5:30 PM', duration: '1h', price: 300, seats: 40, available: 30 },
         { id: 8, name: 'Anamalai', type: '27', origin: 'SECE', destination: 'Anamalai', departure: '4:45 PM', arrival: '6:15 PM', duration: '1:30h', price: 200, seats: 40, available: 35 },
         { id: 9, name: 'Echanari', type: '32', origin: 'SECE', destination: 'Echanari', departure: '11:00 AM', arrival: '7:00 PM', duration: '8h', price: 900, seats: 40, available: 20 },
-        { id: 10, name: 'Negamam', type: '24', origin: 'SECE', destination: 'Nagercoil', departure: '12:00 PM', arrival: '8:00 PM', duration: '8h', price: 950, seats: 40, available: 15 }
+        { id: 10, name: 'Negamam', type: '24', origin: 'SECE', destination: 'Negamam', departure: '4:30 PM', arrival: '5:30 PM', duration: '1h', price: 200, seats: 40, available: 15 }
     ];
 
     if (bookingForm) {
