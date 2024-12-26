@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const bookingForm = document.getElementById('booking-form');
     const busList = document.querySelector('.bus-list');
     const busesSection = document.getElementById('buses');
-    const seatsSection = document.getElementById('seats');
     const today = new Date().toISOString().split('T')[0];
     document.getElementById('date').min = today;
 
@@ -23,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (bookingForm) {
         bookingForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            seatsSection.style.display = 'none';
             busList.innerHTML = '';
             
             const destination = document.getElementById('destination').value.trim().toLowerCase();
@@ -61,68 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.select-bus').forEach(button => {
                 button.addEventListener('click', () => {
                     const busId = parseInt(button.getAttribute('data-bus-id'));
-                    const selectedBus = buses.find(bus => bus.id === busId);
-                    seatsSection.style.display = 'block';
-                    seatsSection.scrollIntoView({ behavior: 'smooth' });
-                    
-                    const seatsDiv = document.querySelector('.seats');
-                    seatsDiv.innerHTML = '';
-                    
-                    // Generate seats
-                    for (let i = 1; i <= selectedBus.seats; i++) {
-                        const seatButton = document.createElement('button');
-                        seatButton.classList.add('seat');
-                        // Mark seats as unavailable based on available seats count
-                        if (i > selectedBus.available) {
-                            seatButton.classList.add('unavailable');
-                            seatButton.disabled = true;
-                        }
-                        seatButton.innerText = i;
-                        
-                        if (!seatButton.disabled) {
-                            seatButton.addEventListener('click', () => {
-                                if (!seatButton.classList.contains('unavailable')) {
-                                    seatButton.classList.toggle('selected');
-                                    updateSelectedSeats();
-                                }
-                            });
-                        }
-                        
-                        seatsDiv.appendChild(seatButton);
-                    }
+                    window.location.href = `seat.html?busId=${busId}`;
                 });
             });
         });
     }
-
-    // Function to update selected seats count
-    function updateSelectedSeats() {
-        const selectedSeats = document.querySelectorAll('.seat.selected').length;
-        const passengerCount = parseInt(document.getElementById('passengers').value);
-        
-        if (selectedSeats > passengerCount) {
-            alert(`You can only select ${passengerCount} seat(s) as per your passenger count.`);
-            // Deselect the last selected seat
-            const lastSelected = document.querySelector('.seat.selected:last-child');
-            if (lastSelected) {
-                lastSelected.classList.remove('selected');
-            }
-        }
-    }
-   
-    // Add booking confirmation
-    document.querySelector('.book-seats').addEventListener('click', () => {
-        const selectedSeats = document.querySelectorAll('.seat.selected');
-        if (selectedSeats.length === 0) {
-            alert('Please select at least one seat to proceed with booking.');
-            return;
-        }
-        const seatNumbers = Array.from(selectedSeats).map(seat => seat.innerText).join(', ');
-        alert(`Booking confirmed for seats: ${seatNumbers}`);
-        location.href = '#home';
-        bookingForm.reset();
-        busList.innerHTML = '';
-        seatsSection.style.display = 'none';
-        busesSection.style.display = 'none';
-    });
 });

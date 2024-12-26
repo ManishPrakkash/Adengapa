@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seats</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!--Available seats window -->
+    <section id="seats" class="container">
+        <h2>Available Seats</h2>
+        <div class="seat-selection">
+            <div class="seats"></div>
+            <button class="book-seats" style="display: block; margin: 2rem auto;">Confirm Booking</button>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const busId = parseInt(urlParams.get('busId'));
+
+            // Sample bus data with routes
+            const buses = [
+                { id: 1, name: 'Udumalai', type: '24', origin: 'SECE', destination: 'Udumalai', departure: '4:45 PM', arrival: '6:15 PM', duration: '2h', price: 300, seats: 40, available: 25 },
+                { id: 2, name: 'Pollachi', type: '32', origin: 'SECE', destination: 'Pollachi', departure: '4:30 PM', arrival: '5:30 PM', duration: '1h', price: 200, seats: 40, available: 15 },
+                { id: 3, name: 'Coimbatore', type: '24', origin: 'SECE', destination: 'Coimbatore', departure: '4:30 PM', arrival: '6:30 PM', duration: '2h', price: 450, seats: 40, available: 20 },
+                { id: 4, name: 'Palladam', type: '25', origin: 'SECE', destination: 'Palladam', departure: '4:45 PM', arrival: '6:00 PM', duration: '1:30h', price: 200, seats: 40, available: 30 },
+                { id: 5, name: 'Tirupur', type: '33', origin: 'SECE', destination: 'Tirupur', departure: '4:45 PM', arrival: '6:00 PM', duration: '1:15h', price: 300, seats: 40, available: 20 },
+                { id: 6, name: 'Sundarapuram', type: '34', origin: 'SECE', destination: 'Sundarapuram', departure: '4:30 PM', arrival: '5:30 PM', duration: '1h', price: 100, seats: 40, available: 25 },
+                { id: 7, name: 'Pothanur', type: '35', origin: 'SECE', destination: 'Pothanur', departure: '4:30 PM', arrival: '5:30 PM', duration: '1h', price: 300, seats: 40, available: 30 },
+                { id: 8, name: 'Anaimalai', type: '27', origin: 'SECE', destination: 'Anaimalai', departure: '4:45 PM', arrival: '6:15 PM', duration: '1h', price: 200, seats: 40, available: 35 },
+                { id: 9, name: 'Echanari', type: '32', origin: 'SECE', destination: 'Echanari', departure: '4:30 PM', arrival: '6:00 PM', duration: '1.30h', price: 200, seats: 40, available: 20 },
+                { id: 10, name: 'Negamam', type: '24', origin: 'SECE', destination: 'Negamam', departure: '4:30 PM', arrival: '5:30 PM', duration: '1h', price: 200, seats: 40, available: 15 }
+            ];
+
+            const selectedBus = buses.find(bus => bus.id === busId);
+            if (!selectedBus) {
+                alert('Bus not found');
+                return;
+            }
+
+            const seatsDiv = document.querySelector('.seats');
+            seatsDiv.innerHTML = '';
+
+            // Generate seats
+            for (let i = 1; i <= selectedBus.seats; i++) {
+                const seatButton = document.createElement('button');
+                seatButton.classList.add('seat');
+                // Mark seats as unavailable based on available seats count
+                if (i > selectedBus.available) {
+                    seatButton.classList.add('unavailable');
+                    seatButton.disabled = true;
+                }
+                seatButton.innerText = i;
+
+                if (!seatButton.disabled) {
+                    seatButton.addEventListener('click', () => {
+                        if (!seatButton.classList.contains('unavailable')) {
+                            seatButton.classList.toggle('selected');
+                            updateSelectedSeats();
+                        }
+                    });
+                }
+
+                seatsDiv.appendChild(seatButton);
+            }
+
+            // Function to update selected seats count
+            function updateSelectedSeats() {
+                const selectedSeats = document.querySelectorAll('.seat.selected').length;
+                const passengerCount = 1; // Assuming 1 passenger for simplicity
+
+                if (selectedSeats > passengerCount) {
+                    alert(`You can only select ${passengerCount} seat(s) as per your passenger count.`);
+                    // Deselect the last selected seat
+                    const lastSelected = document.querySelector('.seat.selected:last-child');
+                    if (lastSelected) {
+                        lastSelected.classList.remove('selected');
+                    }
+                }
+            }
+
+            // Add booking confirmation
+            document.querySelector('.book-seats').addEventListener('click', () => {
+                const selectedSeats = document.querySelectorAll('.seat.selected');
+                if (selectedSeats.length === 0) {
+                    alert('Please select at least one seat to proceed with booking.');
+                    return;
+                }
+                const seatNumbers = Array.from(selectedSeats).map(seat => seat.innerText).join(', ');
+                alert(`Booking confirmed for seats: ${seatNumbers}`);
+                window.close();
+            });
+        });
+    </script>
+</body>
+
+</html>
