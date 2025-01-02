@@ -73,7 +73,7 @@
              count
             function updateSelectedSeats() {
                 const selectedSeats = document.querySelectorAll('.seat.selected').length;
-                const passengerCount = 1; // Assuming 1 passenger for simplicity
+                const passengerCount = 1;
 
                 if (selectedSeats > passengerCount) {
                     alert(`You can only select ${passengerCount} seat(s) as per your passenger count.`);
