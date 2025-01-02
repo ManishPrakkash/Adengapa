@@ -51,7 +51,7 @@
             for (let i = 1; i <= selectedBus.seats; i++) {
                 const seatButton = document.createElement('button');
                 seatButton.classList.add('seat');
-                // Mark seats as unavailable based on available seats count
+              
                 if (i > selectedBus.available) {
                     seatButton.classList.add('unavailable');
                     seatButton.disabled = true;
