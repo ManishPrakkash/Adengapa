@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const today = new Date().toISOString().split('T')[0];
     document.getElementById('date').min = today;
 
-    // Sample bus data with routes and images
+    
     const buses = [
         { id: 1, name: 'Udumalai', type: '24', origin: 'SECE', destination: 'Udumalai', departure: '4:45 PM', arrival: '6:15 PM', duration: '2h', price: 300, seats: 40, available: 25, image: '' },
         { id: 2, name: 'Pollachi', type: '32', origin: 'SECE', destination: 'Pollachi', departure: '4:30 PM', arrival: '5:30 PM', duration: '1h', price: 200, seats: 40, available: 15, image: 'assets/ClgBus.jpeg' },
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const destination = document.getElementById('destination').value.trim().toLowerCase();
             
-            // Filter buses based on destination
+            
             const filteredBuses = buses.filter(bus => bus.destination.toLowerCase() === destination);
             
             if (filteredBuses.length === 0) {
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 busList.appendChild(busItem);
             });
 
-            // Add event listeners to bus selection buttons
+             selection buttons
             document.querySelectorAll('.select-bus').forEach(button => {
                 button.addEventListener('click', () => {
                     const busId = parseInt(button.getAttribute('data-bus-id'));
