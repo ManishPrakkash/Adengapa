@@ -10,7 +10,7 @@
 
 <body>
 
-    <!--Available seats window -->
+  
     <section id="seats" class="container">
         <h2 style="text-align: center; color: #1755a7; margin-top: 20px; padding-top: 20px;">Available Seats</h2>
         <div class="seat-selection">
@@ -24,7 +24,7 @@
             const urlParams = new URLSearchParams(window.location.search);
             const busId = parseInt(urlParams.get('busId'));
 
-            // Sample bus data with routes
+            
             const buses = [
                 { id: 1, name: 'Udumalai', type: '24', origin: 'SECE', destination: 'Udumalai', departure: '4:45 PM', arrival: '6:15 PM', duration: '2h', price: 300, seats: 40, available: 25 },
                 { id: 2, name: 'Pollachi', type: '32', origin: 'SECE', destination: 'Pollachi', departure: '4:30 PM', arrival: '5:30 PM', duration: '1h', price: 200, seats: 40, available: 15 },
@@ -47,7 +47,7 @@
             const seatsDiv = document.querySelector('.seats');
             seatsDiv.innerHTML = '';
 
-            // Generate seats
+           
             for (let i = 1; i <= selectedBus.seats; i++) {
                 const seatButton = document.createElement('button');
                 seatButton.classList.add('seat');
@@ -70,14 +70,14 @@
                 seatsDiv.appendChild(seatButton);
             }
 
-            // Function to update selected seats count
+             count
             function updateSelectedSeats() {
                 const selectedSeats = document.querySelectorAll('.seat.selected').length;
                 const passengerCount = 1; // Assuming 1 passenger for simplicity
 
                 if (selectedSeats > passengerCount) {
                     alert(`You can only select ${passengerCount} seat(s) as per your passenger count.`);
-                    // Deselect the last selected seat
+                    seat
                     const lastSelected = document.querySelector('.seat.selected:last-child');
                     if (lastSelected) {
                         lastSelected.classList.remove('selected');
@@ -85,7 +85,7 @@
                 }
             }
 
-            // Add booking confirmation
+            
             document.querySelector('.book-seats').addEventListener('click', () => {
                 const selectedSeats = document.querySelectorAll('.seat.selected');
                 if (selectedSeats.length === 0) {
